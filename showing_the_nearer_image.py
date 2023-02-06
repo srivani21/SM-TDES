@@ -102,7 +102,6 @@ def show_closest_images(event):
 
     import pandas as pd
     # Create a dataFrame using dictionary
-    # df=pd.DataFrame({"Image":[file_name], "date and time":[dt]})
     df = pd.DataFrame({"Image": [file_name], "date and time": [dt]})
     # print(df)
     exif_data = image_exif_data(file_name_full)
@@ -117,12 +116,8 @@ def show_closest_images(event):
 
     # find the indices of the closest images
     sorted_distances= np.argsort(distances)
-    #sorted_distances = sorted(distances)
     print("sorted distances:", sorted_distances)
-    #closest_index = int(closest_index)
-
     closest_indices = sorted_distances[1:9]  # exclude the selected image
-    #closest_indices = int(closest_indices)
     closest_indices = [int(i) for i in closest_indices]
 
     #closest_indices = int('sorted_distances')
